@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>One Last Gift for Mahi 💜</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Georgia, serif;
+            text-align: center;
+            color: white;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    #a855f7,
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    #ec4899,
+                    transparent 40%
+                ),
+                linear-gradient(
+                    135deg,
+                    #18002e,
+                    #4c0080,
+                    #220044
+                );
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 500px;
+            padding: 30px 20px;
+            border: 2px solid #f0abfc;
+            border-radius: 30px;
+
+            background: rgba(255, 255, 255, 0.09);
+
+            box-shadow:
+                0 0 20px #d946ef,
+                0 0 50px #9333ea;
+
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            color: #f5d0fe;
+            font-size: 32px;
+
+            text-shadow:
+                0 0 10px #e879f9,
+                0 0 25px #c026d3;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* GIFT BOX */
+
+        .gift {
+            font-size: 110px;
+            cursor: pointer;
+            display: inline-block;
+
+            filter: drop-shadow(0 0 20px #f0abfc);
+
+            animation: giftGlow 1.5s infinite alternate;
+        }
+
+        @keyframes giftGlow {
+            from {
+                transform: scale(1);
+                filter: drop-shadow(0 0 10px #e879f9);
+            }
+
+            to {
+                transform: scale(1.12);
+                filter: drop-shadow(0 0 30px #ffffff);
+            }
+        }
+
+        .click-text {
+            color: #f5d0fe;
+            font-size: 18px;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        button {
+            border: 2px solid white;
+            padding: 13px 25px;
+            border-radius: 30px;
+
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+
+            background: linear-gradient(
+                45deg,
+                #9333ea,
+                #db2777
+            );
+
+            box-shadow: 0 0 20px #e879f9;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 30px white;
+        }
+
+        /* HIDDEN SURPRISE */
+
+        #surprise {
+            display: none;
+            animation: appear 1.5s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .flowers {
+            font-size: 35px;
+            margin: 15px 0;
+        }
+
+        .message {
+            padding: 18px;
+            margin-top: 20px;
+
+            border: 1px dashed #f5d0fe;
+            border-radius: 20px;
+
+            background: rgba(147, 51, 234, 0.25);
+
+            line-height: 1.9;
+            font-size: 17px;
+        }
+         .signature {
+            color: #f5d0fe;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        /* FLOATING HEARTS */
+
+        .heart {
+            position: fixed;
+            bottom: -40px;
+            pointer-events: none;
+            animation: floatUp 7s linear forwards;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* BALLOONS */
+
+        .balloon {
+            position: fixed;
+            bottom: -150px;
+            font-size: 55px;
+            pointer-events: none;
+            animation: balloonUp 9s linear forwards;
+            z-index: 1;
+        }
+
+        @keyframes balloonUp {
+            0% {
+                transform: translateY(0) rotate(-10deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(15deg);
+                opacity: 0;
+            }
+        }
+
+        .footer {
+            font-size: 14px;
+            color: #f5d0fe;
+            margin-top: 25px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div id="opening">
+
+                <div class="flowers">
+                    🌸 ✨ 🌷
+                </div>
+
+                <h1>One Last Gift 💜</h1>
+
+                <p class="subtitle">
+                    Dear Mahi,<br>
+                    I saved something special just for you...
+                </p>
+
+                <div class="gift" onclick="openGift()">
+                    🎁
+                </div>
+
+                <p class="click-text">
+                    ✨ Click your gift to open it ✨
+                </p>
+
+                <button onclick="openGift()">
+                    Open My Gift 💌
+                </button>
+
+            </div>
+            <!-- SURPRISE MESSAGE -->
+
+            <div id="surprise">
+
+                <div class="flowers">
+                    🌹 🌸 💐 🌷 🌹
+                </div>
+
+                <h1>Happy Birthday, Mahi! 💜</h1>
+
+                <div style="font-size: 75px;">
+                    🎂
+                </div>
+
+                <h2>For My Special Friend 💗</h2>
+
+                <div class="message">
+
+                    Dear Mahi,
+
+                    <br><br>
+
+                    You deserve all the happiness
+                    this beautiful world has to offer. 💜
+
+                    <br><br>
+
+                    May your days be filled with laughter,
+                    your heart with peace, and your life
+                    with countless beautiful memories. 🌸
+
+                    <br><br>
+
+                    May every dream you carry in your heart
+                    find its way into reality. ✨
+
+                    <br><br>
+
+                    Thank you for being YOU!
+
+                    <br><br>
+
+                    Always keep smiling, keep shining,
+                    and never forget how special you are. 🦋
+
+                    <br><br>
+
+                    Sending you a universe full of
+                    purple hearts and happiness! 💜🌌
+
+                </div>
+
+                <div style="font-size: 40px; margin-top: 20px;">
+                    🎈 💜 🎈 💗 🎈
+                </div>
+
+                <div class="signature">
+                    With lots of love,<br>
+                    Your Friend 💜
+                </div>
+
+                <p class="footer">
+                    ✨ A little gift made with love, just for you ✨
+                </p>
+
+                <button onclick="celebrate()">
+                    More Hearts! 💜
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        let opened = false;
+
+        function openGift() {
+
+            if (opened) {
+                return;
+            }
+
+            opened = true;
+
+            document.getElementById("opening").style.display = "none";
+
+            document.getElementById("surprise").style.display = "block";
+
+            celebrate();
+
+        }
+
+        function celebrate() {
+
+            for (let i = 0; i < 18; i++) {
+
+                setTimeout(function() {
+
+                    let heart = document.createElement("div");
+
+                    heart.className = "heart";
+
+                    heart.innerHTML = [
+                        "💜", "💗", "💕",
+                        "💖", "✨", "🦋"
+                    ][Math.floor(Math.random() * 6)];
+
+                    heart.style.left = Math.random() * 100 + "vw";
+
+                    heart.style.fontSize =
+                        (20 + Math.random() * 25) + "px";
+
+                    heart.style.animationDuration =
+                        (4 + Math.random() * 4) + "s";
+
+                    document.body.appendChild(heart);
+
+                    setTimeout(function() {
+                        heart.remove();
+                    }, 8500);
+
+                }, i * 120);
+
+            }
+
+            for (let i = 0; i < 7; i++) {
+
+                setTimeout(function() {
+
+                    let balloon = document.createElement("div");
+
+                    balloon.className = "balloon";
+
+                    balloon.innerHTML = [
+                        "🎈", "💜", "🎈", "💗"
+                    ][Math.floor(Math.random() * 4)];
+
+                    balloon.style.left = Math.random() * 95 + "vw";
+
+                    document.body.appendChild(balloon);
+
+                    setTimeout(function() {
+                        balloon.remove();
+                    }, 9500);
+
+                }, i * 250);
+
+            }
+
+        }
+
+        // Automatically float some hearts
+
+        setInterval(function() {
+
+            let heart = document.createElement("div");
+
+            heart.className = "heart";
+            heart.innerHTML = "💜";
+
+            heart.style.left = Math.random() * 100 + "vw";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function() {
+                heart.remove();
+            }, 8500);
+
+        }, 1000);
+
+    </script>
+
+</body>
+</html>

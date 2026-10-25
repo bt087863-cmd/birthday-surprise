@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Surprise for Mahi 💜</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        /* PURPLE GLOWING BACKGROUND */
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+
+            background:
+                radial-gradient(circle at top left, #9b4dca, transparent 40%),
+                radial-gradient(circle at bottom right, #6a00a8, transparent 45%),
+                #140020;
+
+            overflow-x: hidden;
+        }
+
+        h1 {
+            color: #f3ccff;
+            text-shadow: 0 0 15px #e580ff;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        /* FIRST PAGE */
+
+        #firstPage {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* GIFT BOX */
+
+        .gift {
+            font-size: 120px;
+            cursor: pointer;
+            animation: giftGlow 1.5s infinite alternate;
+            transition: transform 0.3s;
+        }
+
+        .gift:hover {
+            transform: scale(1.15);
+        }
+
+        @keyframes giftGlow {
+            from {
+                filter: drop-shadow(0 0 5px #d580ff);
+            }
+
+            to {
+                filter: drop-shadow(0 0 30px #ff66ff);
+            }
+        }
+
+        .openButton {
+            padding: 15px 30px;
+            font-size: 20px;
+            color: white;
+            background: #8a2be2;
+            border: 2px solid #f0caff;
+            border-radius: 30px;
+            box-shadow: 0 0 20px #d580ff;
+            cursor: pointer;
+        }
+
+        .openButton:hover {
+            background: #b44dff;
+        }
+
+        /* SECOND PAGE */
+
+        #birthdayPage {
+            display: none;
+            padding: 25px 15px 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PHOTO GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            max-width: 650px;
+            margin: 30px auto;
+        }
+
+        .photo {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border: 3px solid #e6b3ff;
+            border-radius: 18px;
+            box-shadow:
+                0 0 12px #bf40ff,
+                0 0 25px #8000ff;
+
+            box-sizing: border-box;
+            animation: photoGlow 2s infinite alternate;
+        }
+
+        @keyframes photoGlow {
+            from {
+                box-shadow: 0 0 10px #bf40ff;
+            }
+
+            to {
+                box-shadow: 0 0 25px #ff99ff;
+            }
+        }
+
+        /* FLOATING HEARTS AND BALLOONS */
+
+        .floating {
+            position: fixed;
+            bottom: -80px;
+            animation: floatUp 8s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            font-size: 30px;
+        }
+
+        .balloon {
+            font-size: 45px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        /* MOBILE DESIGN */
+
+        @media (max-width: 450px) {
+            .gallery {
+                gap: 10px;
+            }
+
+            .photo {
+                height: 170px;
+            }  h1 {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING DECORATIONS -->
+
+    <div class="floating heart" style="left:5%; animation-delay:0s;">💜</div>
+    <div class="floating balloon" style="left:20%; animation-delay:2s;">🎈</div>
+    <div class="floating heart" style="left:40%; animation-delay:1s;">💕</div>
+    <div class="floating balloon" style="left:60%; animation-delay:4s;">🎈</div>
+    <div class="floating heart" style="left:80%; animation-delay:3s;">💗</div>
+    <div class="floating balloon" style="left:92%; animation-delay:1s;">🎈</div>
+
+
+    <!-- FIRST PAGE: CLICK THE GIFT -->
+
+    <section id="firstPage">
+
+        <h1>💜 A Special Surprise 💜</h1>
+
+        <p>Someone special has a gift waiting for her...</p>
+
+        <div class="gift" onclick="openGift()">🎁</div>
+
+        <h2>For Mahi 💗</h2>
+
+        <button class="openButton" onclick="openGift()">
+            Open Your Gift ✨
+        </button>
+
+        <p>Tap the gift to discover your surprise! 🎀</p>
+
+    </section>
+
+
+    <!-- SECOND PAGE: SEVEN PHOTOS -->
+
+    <section id="birthdayPage">
+
+        <h1>🎂 Happy Birthday Mahi! 💜</h1>
+
+        <p>
+            Seven special pictures for a wonderful friend! 💗
+        </p>
+
+        <div class="gallery">
+
+            <!-- PHOTO 1 -->
+            <img class="photo" src="RM.jpg" alt="Memory 1">
+
+            <!-- PHOTO 2 -->
+            <img class="photo" src="jin.jpg" alt="Memory 2">
+
+            <!-- PHOTO 3 -->
+            <img class="photo" src="JHOPE.jpg" style="height: 300px;" alt="Memory 3">
+
+            <!-- PHOTO 4 -->
+            <img class="photo" src="SUGA.jpg" style="height: 300px;"alt="Memory 4">
+
+            <!-- PHOTO 5 -->
+            <img class="photo" src="JIMIN.jpg" alt="Memory 5">
+
+            <!-- PHOTO 6 -->
+            <img class="photo" src="Bts V 💜 💜.jpg" alt="Memory 6">
+
+            <!-- PHOTO 7 -->
+            <img class="photo" src="JK.jpg" alt="Memory 7">
+
+        </div>
+
+        <h2>💜 A Little Birthday Message 💜</h2>
+
+        <p>
+            Happy Birthday, Mahi! 🎂💗
+            <br><br>
+            May your life be filled with happiness,
+            love, laughter and beautiful memories.
+            <br><br>
+            Keep shining like a star and smiling
+            like the beautiful person you are! ✨
+            <br><br>
+            Sending you lots of purple hearts,
+            balloons and love! 💜🎈
+        </p>
+
+        <h1>💜 Borahae! 💜</h1>
+
+        <p>Made with love, especially for you! 🎁</p>
+
+    </section>
+
+
+    <script>
+
+        function openGift() {
+
+            document.getElementById("firstPage").style.display = "none";
+
+            document.getElementById("birthdayPage").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+    </script>
+    <a href="lastgift.html"
+   style="font-size: 30px;
+          color: white;
+          background: purple;
+          padding: 15px 30px;
+          text-decoration: none;
+          border-radius: 15px;
+          box-shadow: 0 0 20px violet;
+          display: inline-block;">
+    🎁 Click Here 🎁
+</a>
+
+</body>
+</html>
